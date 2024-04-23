@@ -1,8 +1,3 @@
 def add(*numbers)
-  sums = []
-  numbers.each do |num|
-    sum = num.split(',').map(&:to_i).sum
-    sums << sum
-  end
-  sums
+  numbers.map { |num| num.split(',').map(&:to_i).sum }
 end
