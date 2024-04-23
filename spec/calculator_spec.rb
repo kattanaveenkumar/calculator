@@ -36,4 +36,8 @@ RSpec.describe "#add" do
   it "raises an error for input '1,\n'" do
     expect { add("1,\n") }.to raise_error("Invalid input")
   end
+
+  it "raises an error for input '-1,2,-3'" do
+    expect { add("-1,2,-3") }.to raise_error("Negative numbers not allowed: -1,-3")
+  end
 end
