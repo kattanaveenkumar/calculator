@@ -16,4 +16,12 @@ RSpec.describe "#add" do
   it "returns [5, 4] when input is '2,3' and '4'" do
     expect(add("2,3", "4")).to eq([5, 4])
   end
+
+  it "returns 6 for input '1\n2,3'" do
+    expect(add("1\n2,3")).to eq([6])
+  end
+
+  it "raises an error for input '1,\n'" do
+    expect { add("1,\n") }.to raise_error("Invalid input")
+  end
 end
