@@ -1,11 +1,8 @@
 def add(*numbers)
   numbers.map do |num|
-    delimiter = ','
-    if num.start_with?("//")
-      delimiter = num[2]
-      num = num[num.index("\n")+1..-1]
-    end
-    raise "Invalid input" if num.end_with?(',') || num.end_with?("\n")
-    num.split(/[\n#{delimiter}]/).map(&:to_i).sum
+    delimiter = num.start_with?("//") ? num[2] : ','
+    nums = num.start_with?("//") ? num[num.index("\n")+1..-1] : num
+    raise "Invalid input" if nums.end_with?(',') || nums.end_with?("\n")
+    nums.split(/[\n#{delimiter}]/).map(&:to_i).sum
   end
 end

@@ -14,7 +14,7 @@ RSpec.describe "#add" do
   end
 
   it "returns [5, 4] when input is '2,3' and '4'" do
-    expect(add("2,3", "4")).to eq([5, 4])
+    expect(add("", "1", "1,5")).to eq([0, 1, 6])
   end
 
   it "returns 6 for input '1\n2,3'" do
